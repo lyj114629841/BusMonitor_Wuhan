@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
                         public void run() {
                             Message msg = new Message();
                             msg.what = 2;
-                            msg.obj = WebService.WebConnectPost("http://advertisement.whgjzt.com/notice/queryHasPublish.do", "appId=HvBJ1PkBttbqxeBF46Aa&PageSize=10&PageIndex=" + page + "&areaCode=420100");
+                            msg.obj = WebService.WebConnectPost("http://advertisement.whgjzt.com/notice/queryHasPublish.do", "appId=HvBJ1PkBttbqxeBF46Aa&PageSize=20&PageIndex=" + page + "&areaCode=420100");
                             handler.sendMessageDelayed(msg, 0);// 执行耗时的方法之后发送消给handler
                         }
                     }).start();
@@ -352,7 +352,7 @@ public class MainActivity extends AppCompatActivity {
             public void onDrawerOpened(@NonNull View drawerView) {
 
                 if (drawerView.getId() == nav_news.getId()) {
-                    if (NewsList.size() < 10) {
+                    if (NewsList.size() < 20) {
                         Message msg = new Message();
                         msg.what = 1;
                         msg.arg1 = newsPage;
